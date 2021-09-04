@@ -27,6 +27,19 @@ class User :
 
     @classmethod
     def find_by_username(cls,locker_user_name):
+        '''
+        find user by username
+        '''
         for user in cls.user_list:
             if user.locker_user_name == locker_user_name:
-                return user          
+                return user
+
+    @classmethod
+    def user_exist(cls,locker_user_name):
+        '''
+        check if user exists
+        '''
+        for user in cls.user_exist:
+            if user.locker_user_name == locker_user_name:
+                return True
+        return False                  
