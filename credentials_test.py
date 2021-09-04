@@ -42,6 +42,18 @@ class TestCredentials(unittest.TestCase):
         test_credentials.save_credentials()
         self.assertEqual(len(Credentials.credential_list),2)
 
+    '''
+    Test to check if credentials can be deleted
+    '''
+    def test_delete_credentials(self):
+        self.new_credentials.save_credentials()
+        test_credentials = Credentials("Github","dev-njihia","dev2021","dev_njihia@gmail.com")
+        test_credentials.save_credentials()
+
+        self.new_credentials.delete_credentials() #Delete a credential object
+        self.assertEqual(len(Credentials.credential_list),1)
+        
+
 
 
 if __name__ == '__main__':
