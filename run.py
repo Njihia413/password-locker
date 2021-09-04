@@ -2,6 +2,9 @@
 from user import User
 from credentials import Credentials
 
+"""
+Implementing user functions
+"""
 def create_user(first_name,last_name,locker_user_name,locker_password):
     """
     Function to create a new user
@@ -33,3 +36,43 @@ def check_existing_users(user):
     """
     user.user_exist
 
+"""
+Implementing credentials functions
+"""
+def create_credentials(account,user_name,password,email):
+    """
+    Function to create new credentials
+    """
+    new_credentials = Credentials(account,user_name,password,email)
+    return new_credentials
+
+def save_the_credentials(credentials):
+    """
+    Function to save credentials
+    """
+    credentials.save_credentials()
+
+def delete_the_credentials(credentials):
+    """
+    Function to delete credentials
+    """
+    credentials.delete_credentials()
+
+def find_credentials(credentials):
+    """
+    Function to find credentials
+    """
+    credentials.find_by_account()
+
+def check_existing_credentials(credentials):
+    """
+    Function to check for existing credentials
+    """
+    credentials.credentials_exist()
+
+def display_the_credentials(credentials):
+    """
+    Function that returns all the saved credentials
+    """
+    credentials.display_credentials()
+    
