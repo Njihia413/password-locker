@@ -75,6 +75,12 @@ class TestCredentials(unittest.TestCase):
         credentials_exists = Credentials.credentials_exist("Github")
         self.assertTrue(credentials_exists)
 
+    '''
+    Test to display all credentials
+    '''
+    def test_display_all_credentials(self):
+        self.assertEqual(Credentials.display_credentials(),Credentials.credential_list)
+
 
 
 if __name__ == '__main__':
