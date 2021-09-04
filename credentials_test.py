@@ -9,8 +9,13 @@ class TestCredentials(unittest.TestCase):
         '''
         setUp method to run before each test cases
         '''
-
         self.new_credentials = Credentials("Github","dev-njihia","dev2021","dev_njihia@gmail.com")
+
+    '''
+    Teardown method does clean up after each test case has run
+    '''
+    def tearDown(self):
+        Credentials.credential_list = []
 
     '''
     Test to check if credentials have been created successfully
@@ -27,6 +32,16 @@ class TestCredentials(unittest.TestCase):
     def test_save_credentials(self):
         self.new_credentials.save_credentials() #Saving the credentials
         self.assertEqual(len(Credentials.credential_list),1)
+
+    '''
+    Test to check if multiple credentials objects are saved
+    '''
+    def test_save_multiple_credentials(self):
+        self.new_credentials.save_credentials()
+        test_credentials = Credentials("Github","dev-njihia","dev2021","dev_njihia@gmail.com")
+        test_credentials.save_credentials()
+        self.assertEqual(len(Credentials.credential_list),2)
+
 
 
 if __name__ == '__main__':
