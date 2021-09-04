@@ -23,4 +23,10 @@ class User :
         '''
         delete_user method deletes user objects from user_list
         '''
-        User.user_list.remove(self)      
+        User.user_list.remove(self)
+
+    @classmethod
+    def find_by_username(cls,locker_user_name):
+        for user in cls.user_list:
+            if user.locker_user_name == locker_user_name:
+                return user          
