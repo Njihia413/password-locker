@@ -64,6 +64,17 @@ class TestCredentials(unittest.TestCase):
         found_credentials = Credentials.find_by_account("Github")
         self.assertEqual(found_credentials.user_name,test_credentials.user_name)
 
+    '''
+    Test to check if credentials exist
+    '''
+    def test_credentials_exists(self):
+        self.new_credentials.save_credentials()
+        test_credentials = Credentials("Github","dev-njihia","dev2021","dev_njihia@gmail.com")
+        test_credentials.save_credentials()
+
+        credentials_exists = Credentials.credentials_exist("Github")
+        self.assertTrue(credentials_exists)
+
 
 
 if __name__ == '__main__':
