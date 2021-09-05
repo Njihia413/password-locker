@@ -2,7 +2,8 @@
 # Contributors of this Project
 * By Maureen Njihia on 2nd September 2021
 # Description
- This is a simple terminal based python password app that allows users to:
+ This is a simple terminal based python app that allows users to manage credentials of their various accounts e.g Instagram, Twitter...
+ Users are allowed to:
  * Create new account credentials.
  * Save account credentials. 
  * Display account credentials.
