@@ -6,7 +6,7 @@ class TestUser(unittest.TestCase):
     Test Class that defines test cases for the user class behaviours
     '''
     def setUp(self):
-        self.new_user = User("Maureen","Njihia","Njihia413","Melissa@atara413")
+        self.new_user = User("Maureen","Njihia","Njihia413","atara413")
 
     '''
     Teardown method does clean up after each test case has run
@@ -21,7 +21,7 @@ class TestUser(unittest.TestCase):
         self.assertEqual(self.new_user.first_name,"Maureen")
         self.assertEqual(self.new_user.last_name,"Njihia")
         self.assertEqual(self.new_user.locker_user_name,"Njihia413")
-        self.assertEqual(self.new_user.locker_password,"Melissa@atara413")
+        self.assertEqual(self.new_user.locker_password,"atara413")
 
     '''
     Test to check if the user is saved
@@ -35,7 +35,7 @@ class TestUser(unittest.TestCase):
     '''
     def test_save_multiple_user(self):
         self.new_user.save_user()
-        test_user = User("Maureen","Njihia","Njihia413","Melissa@atara413")
+        test_user = User("Maureen","Njihia","Njihia413","atara413")
         test_user.save_user()
         self.assertEqual(len(User.user_list),2)
 
@@ -44,7 +44,7 @@ class TestUser(unittest.TestCase):
     '''
     def test_delete_user(self):
         self.new_user.save_user()
-        test_user = User("Maureen","Njihia","Njihia413","Melissa@atara413")
+        test_user = User("Maureen","Njihia","Njihia413","atara413")
         test_user.save_user()
 
         self.new_user.delete_user()  #Deleting a user
@@ -55,7 +55,7 @@ class TestUser(unittest.TestCase):
     '''
     def test_find_user_by_username(self):
         self.new_user.save_user()
-        test_user = User("Maureen","Njihia","Njihia413","Melissa@atara413")
+        test_user = User("Maureen","Njihia","Njihia413","atara413")
         test_user.save_user()
 
         found_user = User.find_by_username("Njihia413")
@@ -66,7 +66,7 @@ class TestUser(unittest.TestCase):
     '''
     def test_user_exists(self):
         self.new_user.save_user()
-        test_user = User("Maureen","Njihia","Njihia413","Melissa@atara413")
+        test_user = User("Maureen","Njihia","Njihia413","atara413")
         test_user.save_user()  
 
         user_exists = User.user_exist("Njihia413")

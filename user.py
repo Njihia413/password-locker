@@ -39,7 +39,17 @@ class User :
         """
         check if user exists
         """
-        for user in cls.user_exist:
+        for user in cls.user_list:
             if user.locker_user_name == locker_user_name:
                 return True
-        return False                  
+        return False 
+
+    @classmethod
+    def check_user(cls,locker_user_name,locker_password):
+        """
+        Check if user exists and if password is correct
+        """                 
+        user = cls.find_by_username(locker_user_name)
+        if user and user.locker_password == locker_password:
+            return True
+        return False

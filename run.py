@@ -1,5 +1,4 @@
 #!/usr/bin/env python3.8
-from random import choice
 from user import User
 from credentials import Credentials
 
